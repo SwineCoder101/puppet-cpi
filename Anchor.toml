@@ -5,7 +5,8 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-puppet_cpi = "4XPutW9b9V1Wm4RFHsyWafo86uUkSfK1TgEQSnmFqqdL"
+puppet = "79v3xvzmEcbuAhp5NDkJRNDNR8a6EMimRTSD5HgC57kf"
+puppet-master = "3qeZRjNWndSk2sVgGDdmLmfk3fQEr9APD1QQuTgf4tTC"
 
 [registry]
 url = "https://api.apr.dev"

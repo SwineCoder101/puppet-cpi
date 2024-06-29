@@ -1,12 +1,12 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
-import { PuppetCpi } from "../target/types/puppet_cpi";
+import { Puppet } from "../target/types/puppet";
 
-describe("puppet-cpi", () => {
+describe("puppet", () => {
   // Configure the client to use the local cluster.
   anchor.setProvider(anchor.AnchorProvider.env());
 
-  const program = anchor.workspace.PuppetCpi as Program<PuppetCpi>;
+  const program = anchor.workspace.Puppet as Program<Puppet>;
 
   it("Is initialized!", async () => {
     // Add your test here.

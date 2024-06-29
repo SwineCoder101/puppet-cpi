@@ -1,13 +1,11 @@
 use anchor_lang::prelude::*;
 
-declare_id!("4XPutW9b9V1Wm4RFHsyWafo86uUkSfK1TgEQSnmFqqdL");
+declare_id!("79v3xvzmEcbuAhp5NDkJRNDNR8a6EMimRTSD5HgC57kf");
 
 #[program]
-pub mod puppet_cpi {
+pub mod puppet {
     use super::*;
-
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        msg!("Greetings from: {:?}", ctx.program_id);
+    pub fn initialize(_ctx: Context<Initialize>) -> Result<()> {
         Ok(())
     }
 
@@ -18,6 +16,14 @@ pub mod puppet_cpi {
     }
 }
 
+#[derive(Accounts)]
+pub struct Initialize<'info> {
+    #[account(init, payer = user, space = 8 + 8)]
+    pub puppet: Account<'info, Data>,
+    #[account(mut)]
+    pub user: Signer<'info>,
+    pub system_program: Program<'info, System>,
+}
 
 #[derive(Accounts)]
 pub struct SetData<'info> {
@@ -29,6 +35,3 @@ pub struct SetData<'info> {
 pub struct Data {
     pub data: u64,
 }
-
-#[derive(Accounts)]
-pub struct Initialize {}
