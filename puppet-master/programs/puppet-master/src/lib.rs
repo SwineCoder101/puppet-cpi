@@ -1,9 +1,9 @@
 use anchor_lang::prelude::*;
 
-declare_id!("4XPutW9b9V1Wm4RFHsyWafo86uUkSfK1TgEQSnmFqqdL");
+declare_id!("3Z9WEGXY1V7RC5yEsCxyr7F9iS7mpm4rn4hzMrQnZanJ");
 
 #[program]
-pub mod puppet_cpi {
+pub mod puppet_master {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
